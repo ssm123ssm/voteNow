@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" href="main.css">
+    </head>
+<body>
+    
+    
+    
+    <%if(user != "none"){%>
+    <% include okNav %>   
+    <%}%>
+    <%if(user == "none"){%>
+    <% include signInNav %>   
+    <%}%>
+    
+    <% include main %>
+    <% include footer %>
+    
+    </body>
+    <script src="main.js"></script>
+</html>

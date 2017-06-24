@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/jquery.js"></script>
+    <script src="/bootstrap.js"></script>
+    <script src="/canvas.js"></script>
+    <link rel="stylesheet" href="/bootstrap.css">
+    <script src="/main.js"></script>
+    <link rel="stylesheet" href="/main.css">
+    </head>
+<body>
+    
+ <%if(user != "none"){%>
+    <% include okNav %>   
+    <%}%>
+    <%if(user == "none"){%>
+    <% include signInNav %>   
+    <%}%>
+    
+    <div class="vote mt-5">
+    <h3 class="text-center">Stats of vote <%=ret.info[1].name%></h3>
+      
+        <div class=" row justify-content-center">
+    <div class="vote-stats col-6 mt-5">
+    
+        
+        <%for(var i=0; i<ret.info[2].num_options; i++){%>
+            <div class="s-vote">
+         <div class="text-center">   
+        <%=ret.info[3].votes[i].item%> : <%=ret.info[3].votes[i].vt %> <a class="vt" href="/votes/<%=ret.info[0].id %>/<%=i%>">   vote</a>
+             </div>
+            </div>
+        <%  } %>
+        
+    </div>
+            </div>
+    
+    
+    </div>
+
+    
+    <div class="canvas-container text-center my-5"><canvas id="myCanvas"></canvas></div>
+    
+    <div class="row justify-content-center"><div id="myLegend" class="mx-auto col-4 mb-5"></div></div>
+    
+    
+    <div class="back text-center"><a href="/"><h5 class="mt-5">Back to Home</h5></a></div>
+    
+ <%include footer %>
+    
+    </body>
+    <script src="/main.js"></script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="bootstrap.js"></script>
+    <script src="myPolls.js"></script>
+    <link rel="stylesheet" href="main.css">
+    </head>
+<body>
+    
+    
+    
+    <%if(user != "none"){%>
+    <% include okNav %>   
+    <%}%>
+    <%if(user == "none"){%>
+    <% include signInNav %>   
+    <%}%>
+    
+    
+    <div class="myPolls mt-5">
+    
+        <ul class="list">
+            
+        
+        </ul>
+    
+    </div>
+    
+    
+    <% include footer %>
+    
+    </body>
+    
+</html>
