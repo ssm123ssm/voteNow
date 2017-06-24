@@ -93,7 +93,7 @@ var myVinyls = {
     {
         canvas:myCanvas,
         data:json,
-        colors:["#fde23e","#f16e23", "#57d9ff","#937e88, #fde23e","#f16e23", "#57d9ff","#937e88"],
+        colors:["#fde23e","#f16e23", "#57d9ff","#937e88", "#fde23e","#f16e23", "#57d9ff","#937e88"],
         legend:myLegend
     }
 );
