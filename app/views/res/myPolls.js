@@ -1,6 +1,9 @@
 $(document).ready(function(){
     
     $.getJSON('/myPolls_json', function(json){
+        if(json.length == 0){
+            $('.loader').html("No polls created by you...")
+        }
         json.forEach(function(item){
             /*$(".list").append('<li>' + item + '</li>');*/
             $.getJSON('/myPolls_json/' + item, function(json){
@@ -36,6 +39,7 @@ $(document).ready(function(){
             });
             
         });
+        
     });
     
     
