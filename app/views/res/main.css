@@ -16,3 +16,15 @@
 .dis{
     pointer-events: none;
 }
+
+.remove{
+    cursor: pointer;
+}
+.share{
+    display:none;
+}
+.alt{
+    background-color: aqua;
+    border-radius: 10px;
+    display: none;
+}

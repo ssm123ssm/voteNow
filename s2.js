@@ -21,6 +21,10 @@ var pie_router = require('./app/routes/pie_route');
 var myPolls_router = require('./app/routes/myPolls_route');
 var myPolls_json_router = require('./app/routes/myPolls_json_route');
 var myPolls_json_name_router = require('./app/routes/myPolls_json_name_route');
+
+var remover = require('./app/routes/remove');
+
+
 var app = express();
 
 //Middleware configs
@@ -106,6 +110,15 @@ mongo.connect(databases.dbURL, function(err, db){
     app.get('/myPolls', myPolls_router());
     app.get('/myPolls_json', myPolls_json_router(mongo, databases));
     app.get('/myPolls_json/:val', myPolls_json_name_router(mongo, databases));
+    app.get('/remove/:val', remover(mongo, databases));
+    app.get('/404', function(req, res){
+        if(req.user){
+              res.render('404', {user:req.user});
+          }
+          else{
+              res.render('404', {user:'none'});
+          }
+    });
 });
  
 //Listening

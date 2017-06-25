@@ -30,4 +30,16 @@ $(document).ready(function(){
         
         
     });
+    
+    
+    $('.shr').click(function(){
+        $('.share').val(window.location.href);
+        $('.share').css('display', 'block');
+        $('.share').select();
+        document.execCommand('copy');
+        $('.share').css('display', 'none');
+        $(".alt").css('display', 'block');
+        
+       
+    });
 });
