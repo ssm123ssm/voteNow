@@ -1,6 +1,6 @@
 module.exports= {
-    facebook: {clientID: '1435477023196443',
-    clientSecret: '28a8e757a6f87d6c6d8013d076141837',
+    facebook: {clientID: '320727078348318',
+    clientSecret: '5ca57ae8a90cf5ac472ad5e74388dd8b',
     callbackURL: "/auth/callback",
     profileFields: ['id', 'displayName', 'photos', 'emails']}
 }
