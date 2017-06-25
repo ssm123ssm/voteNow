@@ -6,6 +6,9 @@ $(document).ready(function(){
             $.getJSON('/myPolls_json/' + item, function(json){
                 
                 
+                $('.myPolls').css('display', 'block');
+                $('.loader').css('display', 'none');
+                
                 var prep = '<a class=\'small remove\' data=\'' + json[0].id + '\'>';
                 
                 var post = '<br>remove</a>';
