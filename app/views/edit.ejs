@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/jquery.js"></script>
+    <link rel="stylesheet" href="/bootstrap.css">
+    <script src="/bootstrap.js"></script>
+    <script src="/editjq.js"></script>
+    <link rel="stylesheet" href="/main.css">
+    </head>
+<body>
+    
+    
+    
+    
+    <% include okNav %>   
+    <div class="hide"><%=info[0].id%></div>
+    
+    
+    <div class="container-fluid"><div class=" mt-5">
+    
+        <h3 class="text-center">Edit Vote <%= info[1].name%></h3>
+        
+        <div class='editer'>
+        
+        <form action="/update" method="post">
+    <div class="form-group">
+        <label for="name"><h6>* Name of the vote</h6></label>
+        <input id="name" value='<%= info[1].name %>' name="name" type="text" class="form-control" placeholder="Name" required>
+        </div> 
+            
+       <h6>* Options</h6>
+            
+            <div class="form-group row justify-content-around">
+            <input id="option1" value='<%= info[3].votes[0].item %>' type="text" placeholder="Add Option" class="form-control col-9" name="option" required>
+                <button type="button" class="btn clearbtn col-2">clear</button>
+            </div>
+            
+            <input id="option1" value='<%= info[3].votes[0].item %>' type="text" placeholder="Add Option" class="form-control mt-4" name="option" required>
+            
+            <input id="option2" value='<%= info[3].votes[1].item %>' type="text" placeholder="Add Option" class="form-control" name="option" required>
+            
+            <div class="addOptions mb-4">
+            </div>
+            
+            <button type="button" class="btn btn-primary addField">Add Field</button>
+            <input type="submit" value="Update" class="btn btn-primary sub">
+            
+            
+    </form>
+        </div>
+    
+    </div></div>
+    
+    
+    <% include footer %>
+    
+    </body>
+    
+</html>

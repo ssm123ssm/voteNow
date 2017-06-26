@@ -17,7 +17,7 @@
     pointer-events: none;
 }
 
-.remove{
+.remove, .edit{
     cursor: pointer;
 }
 .share{

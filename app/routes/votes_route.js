@@ -3,20 +3,20 @@ module.exports = function(col) {
       
       
       var max;
-      col.find({},{_id:1}).toArray(function(err, ress){
+      col.find({},{_id:0}).toArray(function(err, ress){
           max = ress.length;
           console.log("Max is " + max);
           id = +req.params.val;
-      if(id > max){
-          /*if(req.user){
-              res.render('404', {user:req.user});
-              res.end();
-          }
-          else{
-              res.render('404', {user:'none'});
-              res.end();
-          }
-          res.send("404");*/
+          var auth = 0;
+          
+          ress.forEach(function(item){
+              if(item.info[0].id == id){
+                  auth = 1;
+              }
+              
+          });
+          
+      if(!auth){       
           res.redirect('/404');
       }
       else{
